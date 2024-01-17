@@ -19,7 +19,7 @@ jobs:
           python-version: 3.9
 
       - name: install
-        run: pip install -e .[dev]
+        run: pip install -e .[dev] && pip install -r extra-reqs.txt
 
       - name: mypy
         run: ./scripts/lint.sh
