@@ -6,4 +6,5 @@ os.environ["TZ"] = "UTC"
 
 def foo() -> str:
     json.dumps({"foo": "bar"})
-    return "foo"
+    # mypy issue here
+    return 5

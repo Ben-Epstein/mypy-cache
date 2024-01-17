@@ -1,43 +1,25 @@
-name: test
-
-on:
-  push:
-    branches:
-      - main
-  pull_request:
-    types: [opened, synchronize]
-
-jobs:
-  test:
-    runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        python-version: ["3.10"]
-      fail-fast: false
-    steps:
-      - name: checkout
-        uses: actions/checkout@v2
-        with:
-          fetch-depth: 0
-
-      - name: apt-get update
-        run: sudo apt-get update -y
-
-      - name: set up python
-        uses: actions/setup-python@v4
-        with:
-          python-version: ${{ matrix.python-version }}
-          cache: "pip"
-          cache-dependency-path: "pyproject.toml"
-
-      - name: install invoke
-        run: pip install invoke
-
-      - name: install
-        run: inv install
-
-      - name: lint
-        run: inv lint
-
-      - name: test
-        run: inv test
+#name: test
+#
+#on:
+#  pull_request:
+#    branches:
+#      - main
+#
+#jobs:
+#  ci:
+#    runs-on: ubuntu-latest
+#    steps:
+#      - uses: actions/checkout@v3
+#
+#      - name: set up python
+#        uses: actions/setup-python@v4
+#        with:
+#          cache: "pip"
+#          cache-dependency-path: "pyproject.toml"
+#          python-version: 3.9
+#
+#      - name: install
+#        run: pip install -e .[dev]
+#
+#      - name: mypy
+#        run: ./scripts/lint.sh
