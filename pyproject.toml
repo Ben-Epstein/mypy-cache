@@ -11,11 +11,10 @@ dynamic = ["version"]
 readme = "README.md"
 license = {text = 'MIT'}
 description = "python_project_template"
-requires-python = ">=3.10"
+requires-python = ">=3.9"
 dependencies = []
 [[project.authors]]
-name = "Anthony Corletti"
-email = "anthcor+python_project_template@gmail.com"
+name = "Ben Epstein"
 
 [project.optional-dependencies]
 dev = [
@@ -78,11 +77,7 @@ exclude = '''
 )/
 '''
 
-[tool.mypy]
-ignore_missing_imports = true
-disallow_untyped_defs = true
-mypy_path = ["python_project_template", "tests"]
-exclude = ["dist", "build", ".venv"]
+
 
 [tool.coverage.run]
 source = ["python_project_template", "tests"]
