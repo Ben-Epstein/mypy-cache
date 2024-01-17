@@ -14,12 +14,12 @@ jobs:
       - name: set up python
         uses: actions/setup-python@v4
         with:
-#          cache: "pip"
-#          cache-dependency-path: "pyproject.toml"
+          cache: "pip"
+          cache-dependency-path: "pyproject.toml"
           python-version: 3.9
 
       - name: install
-        run: pip install -e .[dev]
+        run: pip install -e .[dev] && pip install -r extra-reqs.txt
 
       - name: mypy
         run: ./scripts/lint.sh
