@@ -1,0 +1,6 @@
+ruff >=0.1.7,<0.2
+black >=23.12,<23.13
+mypy >= 1.8.0
+alembic >=  1.13.0mi
+pytest >=7.4.4
+pytest-env >= 1.0.1
